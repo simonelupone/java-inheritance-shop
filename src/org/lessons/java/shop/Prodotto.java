@@ -1,0 +1,69 @@
+package org.lessons.java.shop;
+
+import java.math.BigDecimal;
+import java.util.Random;
+
+public class Prodotto {
+    private int code;
+    private String name;
+    private String brand;
+    private BigDecimal price;
+    private BigDecimal vat;
+
+    public Prodotto(String name, String brand, BigDecimal price, BigDecimal vat) {
+        this.code = randomCode();
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.vat = vat;
+    }
+
+    private int randomCode() {
+        Random rn = new Random();
+        return this.code = rn.nextInt(9999);
+    }
+
+    public int getCode() {
+        return this.code;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        if (name != null) {
+            this.name = name;
+        }
+    }
+
+    public String getBrand() {
+        return this.brand;
+    }
+
+    public void setBrand(String brand) {
+        if (brand != null) {
+            this.brand = brand;
+        }
+    }
+
+    public BigDecimal getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        if (price.compareTo(BigDecimal.ZERO) > 0) {
+            this.price = price;
+        }
+    }
+
+    public BigDecimal getVat() {
+        return this.vat;
+    }
+
+    public void setVat(BigDecimal vat) {
+        if (vat.compareTo(BigDecimal.ZERO) > 0 && vat.compareTo(BigDecimal.ONE) <= 0) {
+            this.vat = vat;
+        }
+    }
+}
