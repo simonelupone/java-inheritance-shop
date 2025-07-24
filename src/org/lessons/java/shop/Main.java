@@ -55,5 +55,18 @@ public class Main {
 
         tv.setIsSmart(false);
         System.out.println(tv.getIsSmart());
+
+        Cuffie cuffie = new Cuffie("WH-1000XM3", "Sony", new BigDecimal("229.00"), new BigDecimal("0.22"), "Black",
+                true);
+
+        System.out.println("----------------------- \n Cuffie: \n-----------------------");
+
+        System.out.println("Nome: " + cuffie.getName());
+        System.out.println("Brand: " + cuffie.getBrand());
+        System.out.println("Prezzo: " + cuffie.getPrice());
+        System.out.println("Iva: " + cuffie.getVat());
+
+        cuffie.setColor("White");
+        System.out.println(cuffie.getColor());
     }
 }
