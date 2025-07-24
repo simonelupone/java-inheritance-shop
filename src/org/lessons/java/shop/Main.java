@@ -25,5 +25,13 @@ public class Main {
         System.out.println("Brand: " + prodotto.getBrand());
         System.out.println("Prezzo: " + prodotto.getPrice());
         System.out.println("Iva: " + prodotto.getVat());
+
+        Smartphone smartphone = new Smartphone("Iphone", "Apple", new BigDecimal("1229.00"), new BigDecimal("0.22"),
+                "I342L122");
+
+        System.out.println(smartphone.getMemory());
+
+        smartphone.setMemory(130);
+        System.out.println(smartphone.getMemory());
     }
 }
