@@ -29,9 +29,31 @@ public class Main {
         Smartphone smartphone = new Smartphone("Iphone", "Apple", new BigDecimal("1229.00"), new BigDecimal("0.22"),
                 "I342L122");
 
+        System.out.println("----------------------- \n Smartphone: \n-----------------------");
+
+        System.out.println("Nome: " + smartphone.getName());
+        System.out.println("Brand: " + smartphone.getBrand());
+        System.out.println("Prezzo: " + smartphone.getPrice());
+        System.out.println("Iva: " + smartphone.getVat());
+        System.out.println(smartphone.getImei());
         System.out.println(smartphone.getMemory());
 
         smartphone.setMemory(130);
         System.out.println(smartphone.getMemory());
+
+        Televisore tv = new Televisore("LE32V342", "Samsung", new BigDecimal("899.00"), new BigDecimal("0.22"), 32,
+                true);
+
+        System.out.println("----------------------- \n Tv: \n-----------------------");
+
+        System.out.println("Nome: " + tv.getName());
+        System.out.println("Brand: " + tv.getBrand());
+        System.out.println("Prezzo: " + tv.getPrice());
+        System.out.println("Iva: " + tv.getVat());
+        System.out.println(tv.getSize() + "\"");
+        System.out.println(tv.getIsSmart());
+
+        tv.setIsSmart(false);
+        System.out.println(tv.getIsSmart());
     }
 }
