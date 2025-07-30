@@ -8,9 +8,9 @@ public class Televisore extends Prodotto {
     private boolean isSmart;
 
     public Televisore(String nome, String brand, BigDecimal price, BigDecimal vat, int size, boolean isSmart) {
+        super(nome, brand, price, vat);
         this.size = size;
         this.isSmart = isSmart;
-        super(nome, brand, price, vat);
     }
 
     public int getSize() {
@@ -23,6 +23,7 @@ public class Televisore extends Prodotto {
         }
     }
 
+    @Override
     public boolean getIsSmart() {
         return this.isSmart;
     }

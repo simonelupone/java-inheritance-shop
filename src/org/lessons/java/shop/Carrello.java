@@ -15,11 +15,11 @@ public class Carrello {
         int numeroArticoli = Integer.parseInt(stringaNumeroArticoli);
 
         Smartphone iphone = new Smartphone("iPhone 16 pro", "Apple", new BigDecimal(1299.00), new BigDecimal(0.22),
-                "IT8675");
+                "IT8675", 128);
         Smartphone galaxy = new Smartphone("Galaxy S25 Ultra", "Samsung", new BigDecimal(1300.00), new BigDecimal(0.22),
-                "IL8767");
+                "IL8767", 256);
         Smartphone nothing = new Smartphone("Phone(3)", "Nothing", new BigDecimal(1099.00), new BigDecimal(0.22),
-                "IM8797");
+                "IM8797", 128);
 
         Televisore theFrame = new Televisore("The Frame", "Samsung", new BigDecimal(399.00), new BigDecimal(0.22), 42,
                 true);
@@ -123,6 +123,10 @@ public class Carrello {
             }
         }
 
+        System.out.println("Hai una carta fedeltà?\n (S/N)");
+        String response = sc.nextLine();
+        boolean fidelityCard = response.equalsIgnoreCase("S") ? true : false;
+
         System.out.println("--------------------------------------------\nIl tuo carrello:\n");
         for (int i = 0; i < oggettiCarrello.length; i++) {
             System.out.println(oggettiCarrello[i]);
@@ -130,7 +134,8 @@ public class Carrello {
 
         BigDecimal total = new BigDecimal(0);
         for(int i = 0; i < oggettiCarrello.length; i++){
-            total = total.add(oggettiCarrello[i].getPrice()).setScale(2, RoundingMode.HALF_EVEN);
+            BigDecimal prezzoFinale = oggettiCarrello[i].discount(oggettiCarrello[i], fidelityCard);
+            total = total.add(prezzoFinale).setScale(2, RoundingMode.HALF_EVEN);
         }
 
         System.out.println("\n---- TOTALE: " + total + " euro ----\n");

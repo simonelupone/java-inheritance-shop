@@ -68,6 +68,41 @@ public class Prodotto {
         }
     }
 
+    // metodi che sono overraidati nelle classi che sono estese da Prodotto
+    public int getMemory(){
+        return 128;
+    }
+
+    public boolean getIsSmart(){
+        return false;
+    }
+
+    public boolean getIsWireless(){
+        return false;
+    }
+
+
+    public BigDecimal discount(Prodotto prodotto, boolean discountCard){
+        BigDecimal discountedPrice = new BigDecimal(0);
+        if(discountCard){
+            if(prodotto instanceof Smartphone){
+                if(prodotto.getMemory() < 256){
+                    discountedPrice = prodotto.getPrice().subtract(prodotto.getPrice().multiply(new BigDecimal(0.05)));
+                }
+            } else if(prodotto instanceof Televisore){
+                if(prodotto.getIsSmart()){
+                    discountedPrice = prodotto.getPrice().subtract(prodotto.getPrice().multiply(new BigDecimal(0.10)));
+                }
+            } else if(prodotto instanceof Cuffie){
+                if(prodotto.getIsWireless()){
+                    discountedPrice = prodotto.getPrice().subtract(prodotto.getPrice().multiply(new BigDecimal(0.07)));
+                }
+            }
+            return discountedPrice;
+        }
+        return price;
+    }
+
     @Override
     public String toString() {
         return String.format("%s, %s, %s euro", this.name, this.brand,

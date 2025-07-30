@@ -8,9 +8,9 @@ public class Cuffie extends Prodotto {
     private boolean isWireless;
 
     public Cuffie(String name, String brand, BigDecimal price, BigDecimal vat, String color, boolean isWireless) {
+        super(name, brand, price, vat);
         this.color = color;
         this.isWireless = isWireless;
-        super(name, brand, price, vat);
     }
 
     public String getColor() {
@@ -23,6 +23,7 @@ public class Cuffie extends Prodotto {
         }
     }
 
+    @Override
     public boolean getIsWireless() {
         return this.isWireless;
     }

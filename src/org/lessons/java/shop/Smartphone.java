@@ -6,10 +6,10 @@ public class Smartphone extends Prodotto {
     private String imei;
     private int memory;
 
-    public Smartphone(String name, String brand, BigDecimal price, BigDecimal vat, String imei) {
-        this.imei = imei;
-        this.memory = 128;
+    public Smartphone(String name, String brand, BigDecimal price, BigDecimal vat, String imei, int memory) {
         super(name, brand, price, vat);
+        this.imei = imei;
+        setMemory(memory);
     }
 
     public String getImei() {
@@ -22,6 +22,7 @@ public class Smartphone extends Prodotto {
         }
     }
 
+    @Override
     public int getMemory() {
         return this.memory;
     }
