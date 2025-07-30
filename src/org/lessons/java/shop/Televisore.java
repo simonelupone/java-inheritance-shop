@@ -30,4 +30,9 @@ public class Televisore extends Prodotto {
     public void setIsSmart(boolean isSmart) {
         this.isSmart = isSmart;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Televisore: %s", super.toString());
+    }
 }

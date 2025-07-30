@@ -1,6 +1,7 @@
 package org.lessons.java.shop;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
@@ -65,5 +66,11 @@ public class Prodotto {
         if (vat.compareTo(BigDecimal.ZERO) > 0 && vat.compareTo(BigDecimal.ONE) <= 0) {
             this.vat = vat;
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s euro", this.name, this.brand,
+                this.price.setScale(2, RoundingMode.HALF_EVEN).toString());
     }
 }

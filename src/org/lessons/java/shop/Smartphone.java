@@ -33,4 +33,9 @@ public class Smartphone extends Prodotto {
             this.memory = memory;
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("Smartphone: %s", super.toString());
+    }
 }
