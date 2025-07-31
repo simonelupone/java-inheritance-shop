@@ -11,16 +11,16 @@ public class DiscountUtility<T extends Prodotto> {
     BigDecimal discountedPrice = new BigDecimal(0);
     BigDecimal price = prodotto.getPrice();
 
-    if(prodotto instanceof Smartphone){
-      if(prodotto.getMemory() < 256){
+    if(prodotto instanceof Smartphone smartphone){
+      if(smartphone.getMemory() < 256){
         discountedPrice = price.multiply(BigDecimal.valueOf(0.05));
       }
-    } else if (prodotto instanceof Televisore) {
-      if (prodotto.getIsSmart()) {
+    } else if (prodotto instanceof Televisore televisore) {
+      if (televisore.getIsSmart()) {
           discountedPrice = price.multiply(BigDecimal.valueOf(0.10));
       }
-    } else if (prodotto instanceof Cuffie) {
-      if (prodotto.getIsWireless()) {
+    } else if (prodotto instanceof Cuffie cuffie) {
+      if (cuffie.getIsWireless()) {
           discountedPrice = price.multiply(BigDecimal.valueOf(0.07));
       }
   }

@@ -82,7 +82,7 @@ public class Prodotto {
     }
 
 
-    public BigDecimal discount(Prodotto prodotto, boolean discountCard){
+    /* public BigDecimal discount(Prodotto prodotto, boolean discountCard){
         BigDecimal discountedPrice = prodotto.getPrice().subtract(prodotto.getPrice().multiply(new BigDecimal(0.02)));
         if(discountCard){
             if(prodotto instanceof Smartphone){
@@ -101,7 +101,7 @@ public class Prodotto {
             return discountedPrice;
         }
         return price;
-    }
+    } */
 
     @Override
     public String toString() {

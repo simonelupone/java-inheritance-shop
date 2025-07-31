@@ -132,9 +132,10 @@ public class Carrello {
             System.out.println(oggettiCarrello[i]);
         }
 
+        DiscountUtility<Prodotto> utility = new DiscountUtility<Prodotto>();
         BigDecimal total = new BigDecimal(0);
         for(int i = 0; i < oggettiCarrello.length; i++){
-            BigDecimal prezzoFinale = oggettiCarrello[i].discount(oggettiCarrello[i], fidelityCard);
+            BigDecimal prezzoFinale = utility.discount(oggettiCarrello[i], fidelityCard);
             total = total.add(prezzoFinale).setScale(2, RoundingMode.HALF_EVEN);
         }
 
