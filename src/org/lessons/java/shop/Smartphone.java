@@ -27,6 +27,16 @@ public class Smartphone extends Prodotto {
         return this.memory;
     }
 
+    /* public BigDecimal discount(boolean discountCard){
+        if(discountCard){
+            if(this.memory < 256){
+                return this.getPrice().subtract(this.getPrice().multiply(new BigDecimal(0.05)));
+            }
+            return this.getPrice().subtract(this.getPrice().multiply(new BigDecimal(0.02)));
+        }
+        return this.getPrice();
+    } */
+
     public void setMemory(int memory) {
         // controllo se i tagli sono validi attraverso bitwise AND
         // (se sono potenze di 2)

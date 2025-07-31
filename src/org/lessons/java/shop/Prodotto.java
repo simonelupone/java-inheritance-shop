@@ -83,7 +83,7 @@ public class Prodotto {
 
 
     public BigDecimal discount(Prodotto prodotto, boolean discountCard){
-        BigDecimal discountedPrice = new BigDecimal(0);
+        BigDecimal discountedPrice = prodotto.getPrice().subtract(prodotto.getPrice().multiply(new BigDecimal(0.02)));
         if(discountCard){
             if(prodotto instanceof Smartphone){
                 if(prodotto.getMemory() < 256){
